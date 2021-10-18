@@ -1,5 +1,5 @@
-let userWinCounter = 0;
-let computerWinCounter = 0;
+let userWinCounter = 0;  //set win counter for user
+let computerWinCounter = 0;  //set win counter for computer
 
 function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 3); //generate a random integer between 0 & 2
@@ -13,9 +13,9 @@ function computerPlay() {
 }
 
 function playRound() {
-    let playerEntry = prompt("Rock, paper, or scissors?"); //prompt player to make Entry
+    let playerEntry = prompt("Rock, paper, or scissors?");   //prompt player to make Entry
     let playerSelection = playerEntry.toUpperCase();  //make playerEntry ALLCAPS for input case insensitivity
-    let computerSelection = computerPlay();  //sets computerSelection by invoking computerPlay
+    let computerSelection = computerPlay();    //sets computerSelection by invoking computerPlay
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {  //compare playerSelection and computerSelection and set response
         response = "Rock beats Scissors! You Win!";
         userWinCounter++;
@@ -40,4 +40,15 @@ function playRound() {
         response = "Invalid entry. Please enter only ROCK PAPER or SCISSORS.";
     }
     return response;
+}
+
+function game() {
+    while (userWinCounter < 5 && computerWinCounter < 5) {
+        console.log(playRound());
+    }
+    if (userWinCounter > computerWinCounter) {
+        return "You Win! Final score " + userWinCounter + " to " + computerWinCounter + ".";
+    } else if (userWinCounter < computerWinCounter) {
+        return "Game Over! Final score " + userWinCounter + " to " + computerWinCounter + ".";
+    }
 }
