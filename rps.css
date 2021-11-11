@@ -1,0 +1,158 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0;
+    height: 100vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.header {
+    height: 60px;
+    width: auto;
+    background-image: url(../rock-paper-scissors/images/grey.png);
+    border-bottom: groove;
+}
+
+.footer {
+    height: 60px;
+    width: auto;
+    background-image: url(../rock-paper-scissors/images/grey.png);
+    border-top: groove;
+}
+
+.main {
+    display: flex;
+    height: auto;
+    flex: 1;
+    background-image: url(../rock-paper-scissors/images/background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttonBox {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 8px;
+    height: 40px;
+    width: 160px;
+    font-size: x-large;
+}
+
+.name {
+    font-size: xx-large;
+    background: black;
+    border-style: groove;
+    color: white;
+    height: 40px;
+    width: 250px;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.score {
+    width: auto;
+    background: black;
+    border-style: groove;
+    color: white;
+    padding: 10px;
+    margin: 0;
+    font-size: x-large;
+    text-align: center;
+}
+
+.emptyBox {
+    height: 168px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: auto;
+    padding: 10px;
+    
+}
+
+.dash {
+    font-size: xx-large;
+    color: white;
+    font-weight: bolder;
+}
+
+#middle {
+    background-image: url(../rock-paper-scissors/images/dark-grey.png);
+    border-left: groove;
+    border-right: groove;
+    justify-content: space-evenly;
+}
+
+.scoreBox {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 33%;
+}
+
+.playerScore {
+    background-color: black;
+    width: 30px;
+    border-style: groove;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.cpuScore {
+    background-color: black;
+    width: 30px;
+    border-style: groove;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.result {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 10px;
+    margin-top: 0px;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log {
+    background-color: black;
+    width: 300px;
+    height: 200px;
+    border-style: groove;
+    color: white;
+}
+
+.playframe {
+    background-color: rgb(44, 44, 44);
+    width: 180px;
+    height: 180px;
+    border-style: groove;
+}
