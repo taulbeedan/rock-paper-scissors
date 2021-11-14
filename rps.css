@@ -159,3 +159,36 @@ button {
     height: 180px;
     border-style: groove;
 }
+
+#victory {
+    background-color: black;
+    border: 3px inset;
+    border-radius: 5px;
+    color: gold;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 10px;
+    margin-top: 0px;
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+}
+
+#gameover {
+    background-color: black;
+    border: 3px inset;
+    border-radius: 5px;
+    color: darkred;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+    margin-top: 0px;
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

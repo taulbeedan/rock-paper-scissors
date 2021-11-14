@@ -64,22 +64,22 @@ function playRound() {
     game();
 }
 
+const victory = document.createElement('div');
+victory.setAttribute("id", "victory");
+victory.textContent = "You Win! Final score " + userWinCounter + " to " + computerWinCounter;
+
+const gameover = document.createElement('div');
+gameover.setAttribute("id", "gameover");
+gameover.textContent = "Game Over! Final score " + userWinCounter + " to " + computerWinCounter;
+
 function game() {
     let middle = document.getElementById("middle");
     let result = document.getElementById("result");
     if (userWinCounter >= 5) {
-        document.body.removeEventListener("click", event);
         middle.removeChild(result);
-        const victory = document.createElement('div');
-        victory.setAttribute("id", "victory");
-        victory.textContent = `You Win! Final score ${userWinCounter} to ${computerWinCounter}`;
         middle.insertBefore(victory,log);
     } else if (computerWinCounter >=5) {
-        document.body.removeEventListener("click", event);
         middle.removeChild(result);
-        const gameover = document.createElement('div');
-        gameover.setAttribute("id", "gameover");
-        gameover.textContent = `Game Over! Final score ${userWinCounter} to ${computerWinCounter}`;
         middle.insertBefore(gameover,log);
     } else {
         return;
