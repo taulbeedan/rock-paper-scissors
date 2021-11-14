@@ -106,7 +106,7 @@ button {
     width: 33%;
 }
 
-.playerScore {
+#playerScore {
     background-color: black;
     width: 30px;
     border-style: groove;
@@ -117,7 +117,7 @@ button {
     font-size: x-large;
 }
 
-.cpuScore {
+#cpuScore {
     background-color: black;
     width: 30px;
     border-style: groove;
@@ -128,7 +128,7 @@ button {
     font-size: x-large;
 }
 
-.result {
+#result {
     background-color: rgb(44, 44, 44);
     color: white;
     text-align: center;
@@ -136,18 +136,21 @@ button {
     font-weight: bolder;
     margin: 10px;
     margin-top: 0px;
-    min-height: 35px;
+    min-height: 68px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.log {
+#log {
     background-color: black;
-    width: 300px;
+    min-width: 300px;
     height: 200px;
     border-style: groove;
     color: white;
+    overflow: auto;
+    align-self: stretch;
+    margin: 15px;
 }
 
 .playframe {

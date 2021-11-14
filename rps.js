@@ -1,5 +1,8 @@
 let userWinCounter = 0;  //set win counter for user
 let computerWinCounter = 0;  //set win counter for computer
+let round = 0;
+let pScore = document.getElementById("playerScore");
+let cScore = document.getElementById("cpuScore");
 
 function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 3); //generate a random integer between 0 & 2
@@ -13,8 +16,9 @@ function computerPlay() {
 }
 
 function playRound() {
-    let playerEntry = prompt("Rock, paper, or scissors?");   //prompt player to make Entry
-    let playerSelection = playerEntry.toUpperCase();  //make playerEntry ALLCAPS for input case insensitivity
+    const resultBox = document.getElementById("result");
+    const playerBox = document.getElementById("pIcon");
+    const cpuBox = document.getElementById("cIcon");
     let computerSelection = computerPlay();    //sets computerSelection by invoking computerPlay
     if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {  //compare playerSelection and computerSelection and set response
         response = "Rock beats Scissors! You Win!";
@@ -38,8 +42,27 @@ function playRound() {
             response = "It's a tie!";
     } else {
         response = "Invalid entry. Please enter only ROCK PAPER or SCISSORS.";
-    }
-    return response;
+    };
+
+    if (playerSelection == "ROCK") {
+        playerBox.src = "../rock-paper-scissors/images/rock.jpg";
+    } else if (playerSelection == "PAPER") {
+        playerBox.src = "../rock-paper-scissors/images/paper.jpeg";
+    } else {
+        playerBox.src = "../rock-paper-scissors/images/scissors.jpeg";
+    };
+
+    if (computerSelection == "ROCK") {
+        cpuBox.src = "../rock-paper-scissors/images/rock.jpg";
+    } else if (computerSelection == "PAPER") {
+        cpuBox.src = "../rock-paper-scissors/images/paper.jpeg";
+    } else {
+        cpuBox.src = "../rock-paper-scissors/images/scissors.jpeg";
+    };
+    
+    resultBox.textContent = response;
+    round++;
+    console.log(response);
 }
 
 function game() {
@@ -48,7 +71,31 @@ function game() {
     }
     if (userWinCounter > computerWinCounter) {
         return "You Win! Final score " + userWinCounter + " to " + computerWinCounter + ".";
-    } else if (userWinCounter < computerWinCounter) {
+   } else if (userWinCounter < computerWinCounter) {
         return "Game Over! Final score " + userWinCounter + " to " + computerWinCounter + ".";
     }
 }
+
+document.body.addEventListener("click", event => {
+    if (event.target.nodeName == "BUTTON") {
+      playerSelection = event.target.id;
+      playRound();
+      updateScore();
+    }
+  });
+
+function updateScore() {
+    const playerScoreBox = document.getElementById("playerScore");
+    const cpuScoreBox = document.getElementById("cpuScore");
+
+    playerScoreBox.textContent = userWinCounter;
+    cpuScoreBox.textContent = computerWinCounter;
+}
+
+(function () {
+    let logger = document.getElementById("log");
+    console.log = function (message) {
+            logger.innerHTML += "Round " + round + " : " + message + "<br />";
+        }
+})();
+
